@@ -13,6 +13,7 @@ import MyAttempted from "../Navber/MyAttempted";
 import Pending from "../Navber/Pending";
 import Vew from "../SharePage/Vew";
 import Updade from "../SharePage/Updade";
+import TakeAssigment from "../SharePage/TakeAssigment";
 
 const router = createBrowserRouter([
   {
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ditels/:_id",
-        element: <Vew></Vew>,
+        element: <PrivateRoute><Vew></Vew></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/assigment"),
       },
       {
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
         element: <Updade></Updade>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/assigment/${params.id}`),
+      },
+      {
+        path: "/takeassigment/:_id",
+        element: <PrivateRoute> <TakeAssigment></TakeAssigment> </PrivateRoute>,
+      //  loader: () => fetch("http://localhost:5000/assigment"),
       },
       {
         path: "/about",
