@@ -71,9 +71,9 @@ const Assigment = () => {
     <div className="">
       <select
         onChange={(e) => setFilterData(e.target.value)}
-        className="select w-full max-w-xs"
+        className="select w-full max-w-xs font-bold text-xl mt-5 mb-5"
       >
-        <option disabled hidden selected>
+        <option disabled hidden selected className="">
           Assigment Level
         </option>
         <option value="Easy">Easy</option>
