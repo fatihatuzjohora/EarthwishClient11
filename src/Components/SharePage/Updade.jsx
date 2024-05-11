@@ -2,11 +2,20 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Updade = () => {
-    const item = useLoaderData();
-    const {_id, titleName, email, name, processingTime, mark, level,photo, description }=item
-   // console.log(item);
+  const item = useLoaderData();
+  const {
+    _id,
+    titleName,
+    email,
+    name,
+    processingTime,
+    mark,
+    level,
+    photo,
+    description,
+  } = item;
+  // console.log(item);
   const handelUpdateAssigment = (event) => {
-
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -27,7 +36,7 @@ const Updade = () => {
       mark,
       photo,
     };
-   //   console.log(update);
+    //   console.log(update);
 
     fetch(`http://localhost:5000/assigment/${_id}`, {
       method: "PUT",
@@ -144,7 +153,11 @@ const Updade = () => {
           {/* 5*/}
           <div className="flex gap-5 mb-5">
             <div className="form-control w-full ">
-              <select name="level" defaultValue={level} className="select select-success w-full">
+              <select
+                name="level"
+                defaultValue={level}
+                className="select select-success w-full"
+              >
                 <option disabled hidden selected>
                   Assignment Difficulty Level
                 </option>
@@ -155,7 +168,11 @@ const Updade = () => {
             </div>
 
             <div className="form-control w-full ">
-              <select name="mark" defaultValue={mark} className="select select-success w-full ">
+              <select
+                name="mark"
+                defaultValue={mark}
+                className="select select-success w-full "
+              >
                 <option disabled hidden selected>
                   Marks
                 </option>

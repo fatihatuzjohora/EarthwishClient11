@@ -63,42 +63,40 @@ const Assigment = () => {
     });
   };
 
-
   //----------------------------------
 
-//   const { user } = useContext(AuthContext);
-//   const {
-//     register,
-//     handleSubmit, 
-//   } = useForm();
-//   const [data, setdata] = useState([]);
-//   const [filterData, setFilterData] = useState([]);
+  //   const { user } = useContext(AuthContext);
+  //   const {
+  //     register,
+  //     handleSubmit,
+  //   } = useForm();
+  //   const [data, setdata] = useState([]);
+  //   const [filterData, setFilterData] = useState([]);
 
-//   //console.log(email);
-//   const targatedData = (data) => {
-//     const myData = data?.filter((e) => e.email === user.email);
-//     setFilterData(myData);
-//   };
+  //   //console.log(email);
+  //   const targatedData = (data) => {
+  //     const myData = data?.filter((e) => e.email === user.email);
+  //     setFilterData(myData);
+  //   };
 
-//   useEffect(() => {
-//     fetch("https://craft-henna-iota.vercel.app/craft")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setdata(data);
-//         targatedData(data);
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching data:", error);
-//       });
-//   }, []);
+  //   useEffect(() => {
+  //     fetch("https://craft-henna-iota.vercel.app/craft")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setdata(data);
+  //         targatedData(data);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //   }, []);
 
-//   const filterdData = (d) => {
-//     console.log(d);
-//     const newFilter  = data.filter(item=>item.customization.toLowerCase() == d.customization.toLowerCase() )
-//     setFilterData(newFilter);
-//   };
+  //   const filterdData = (d) => {
+  //     console.log(d);
+  //     const newFilter  = data.filter(item=>item.customization.toLowerCase() == d.customization.toLowerCase() )
+  //     setFilterData(newFilter);
+  //   };
   //----------------------------------
-
 
   return (
     <div>
@@ -117,7 +115,6 @@ const Assigment = () => {
         </button>
       </form> */}
       assigment{data?.length}
-
       <div className=" mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
         {data?.map((item) => {
           return (

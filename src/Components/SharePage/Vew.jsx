@@ -1,15 +1,13 @@
-
 import { useLoaderData, useParams } from "react-router-dom";
 
-
 const Vew = () => {
-    const items = useLoaderData();
+  const items = useLoaderData();
   const { _id } = useParams();
   const singleData = items.find((i) => i._id == _id);
   console.log(singleData);
-    return (
-        <div>
-            <div className="mt-5 mb-5">
+  return (
+    <div>
+      <div className="mt-5 mb-5">
         {/* <Helmet>
           <title>{singleData?.subcategoryName}</title>
         </Helmet> */}
@@ -41,13 +39,13 @@ const Vew = () => {
               </p>
 
               <h1 className="mt-2 md:text-2xl font-semibold ">
-             {singleData?.mark}
+                {singleData?.mark}
               </h1>
               {/* <h1 className="mt-2 md:text-2xl font-semibold ">
                 Rating: {singleData?.rating}
               </h1> */}
               <h1 className="mt-2 md:text-2xl font-semibold ">
-                 {singleData?.processingTime}
+                {singleData?.processingTime}
               </h1>
               {/* <h1 className="mt-2 md:text-2xl font-semibold ">
              {singleData?.}
@@ -59,8 +57,8 @@ const Vew = () => {
           </div>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Vew;

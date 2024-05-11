@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
 
-
 const Navber = () => {
   //--------------------
   const { user, logOut } = useContext(AuthContext);
@@ -22,12 +21,12 @@ const Navber = () => {
     }
   };
   // console.log(theme);
- //--------------------
+  //--------------------
 
   const handleLogOut = () => {
     logOut()
       .then(() => {
-       // console.log("user log Out succefully");
+        // console.log("user log Out succefully");
       })
       .catch((error) => {
         console.error(error.message);
@@ -43,25 +42,19 @@ const Navber = () => {
         Home
       </NavLink>
       <NavLink className="mr-5" to="/assigment">
-      Assignments
-      </NavLink>
-      <NavLink className="mr-5" to="/createassigment">
-      Create Assignments
-      </NavLink>
-      <NavLink className="mr-5" to="/pendingassigment">
-      Pending Assignments
+        Assignments
       </NavLink>
 
-      {/* {user && (
+      {user && (
         <>
-          <NavLink className="mr-5" to="/addcraft">
-            Add Craft
+          <NavLink className="mr-5" to="/createassigment">
+            Create Assignments
           </NavLink>
-          <NavLink className="mr-5" to="/mycraft">
-            My Art&Craft
+          <NavLink className="mr-5" to="/pendingassigment">
+            Pending Assignments
           </NavLink>
         </>
-      )} */}
+      )}
       {/* <NavLink className="mr-5" to="/contact">
         ContactUs
       </NavLink>
@@ -76,7 +69,6 @@ const Navber = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-sm container px-4 mt-5 ">
-      
       <div className="dropdown ">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
           <svg
@@ -103,8 +95,14 @@ const Navber = () => {
       </div>
       <div className="flex-1">
         <div className="flex gap-2 items-center">
-          <img className="w-[70px] h-[50px]" src="/public/group-study-4029949-3345550.webp" alt="" />
-          <span className=" hidden lg:flex text-2xl font-bold">Earthwise Explorers</span>
+          <img
+            className="w-[70px] h-[50px]"
+            src="/public/group-study-4029949-3345550.webp"
+            alt=""
+          />
+          <span className=" hidden lg:flex text-2xl font-bold">
+            Earthwise Explorers
+          </span>
 
           {/* dark light start  */}
 
@@ -145,13 +143,13 @@ const Navber = () => {
       </div>
 
       <div className="flex-none">
-
         <div className="dropdown dropdown-end z-50">
           <div
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-circle avatar tooltip tooltip-top"
-            data-tip={user?.displayName}>               
+            data-tip={user?.displayName}
+          >
             <div className="w-10 rounded-full" title="">
               <img
                 referrerPolicy="no-referrer"
@@ -164,29 +162,27 @@ const Navber = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-          
-             {
-            user && <>
-             <NavLink to="/profile" className="justify-between mt-2 font-semibold">My Profile</NavLink>
-             <NavLink to='/mysubmitted'className='mt-2 font-semibold'>My Attempted Assignments</NavLink>
+            {user && (
+              <>
+                <NavLink
+                  to="/profile"
+                  className="justify-between mt-2 font-semibold"
+                >
+                  My Profile
+                </NavLink>
+                <NavLink to="/mysubmitted" className="mt-2 font-semibold">
+                  My Attempted Assignments
+                </NavLink>
+              </>
+            )}
 
-            </> }
-            
-              
-            
-        
-              <NavLink to="/signup" className=' mt-2 font-semibold'><button onClick={handleLogOut} >Logout</button></NavLink>
-           
+            <NavLink to="/signup" className=" mt-2 font-semibold">
+              <button onClick={handleLogOut}>Logout</button>
+            </NavLink>
           </ul>
         </div>
       </div>
     </div>
-
-    
-   
-
-   
-    
 
     //         {user ? (
     //           <>
