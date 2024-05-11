@@ -114,7 +114,7 @@ const Assigment = () => {
           Search
         </button>
       </form> */}
-      assigment{data?.length}
+    
       <div className=" mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
         {data?.map((item) => {
           return (
