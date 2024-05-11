@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Assigment = () => {
+  const [filterData, setFilterData] = useState("");
   const [data, setdata] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/assigment", {
+    fetch(`http://localhost:5000/assigment?level=${filterData}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -18,13 +19,13 @@ const Assigment = () => {
         return response.json();
       })
       .then((data) => {
-        // console.log(data);
+      //  console.log(data);
         setdata(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []);
+  }, [filterData]);
 
   //----------------------------------
 
@@ -63,58 +64,23 @@ const Assigment = () => {
     });
   };
 
-  //----------------------------------
-
-  //   const { user } = useContext(AuthContext);
-  //   const {
-  //     register,
-  //     handleSubmit,
-  //   } = useForm();
-  //   const [data, setdata] = useState([]);
-  //   const [filterData, setFilterData] = useState([]);
-
-  //   //console.log(email);
-  //   const targatedData = (data) => {
-  //     const myData = data?.filter((e) => e.email === user.email);
-  //     setFilterData(myData);
-  //   };
-
-  //   useEffect(() => {
-  //     fetch("https://craft-henna-iota.vercel.app/craft")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setdata(data);
-  //         targatedData(data);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching data:", error);
-  //       });
-  //   }, []);
-
-  //   const filterdData = (d) => {
-  //     console.log(d);
-  //     const newFilter  = data.filter(item=>item.customization.toLowerCase() == d.customization.toLowerCase() )
-  //     setFilterData(newFilter);
-  //   };
-  //----------------------------------
+  //console.log(filterData);
+  //-------------
 
   return (
-    <div>
-      {/* <form
-        onSubmit={handleSubmit(filterdData)}
-        className="flex flex-col md:flex-row gap-3 mb-5"
+    <div className="">
+      <select
+        onChange={(e) => setFilterData(e.target.value)}
+        className="select w-full max-w-xs"
       >
-        <label>Assigment Level</label>
-        <select {...register("customization")} defaultValue="yes">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
+        <option disabled hidden selected>
+          Assigment Level
+        </option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
 
-        <button className="border text-secondary " type="submit">
-          Search
-        </button>
-      </form> */}
-    
       <div className=" mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
         {data?.map((item) => {
           return (

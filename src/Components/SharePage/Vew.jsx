@@ -3,7 +3,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 const Vew = () => {
   const items = useLoaderData();
   const { _id } = useParams();
-  const singleData = items.find((i) => i._id == _id);
+  const singleData = items?.find((i) => i._id == _id);
  // console.log(singleData);
   return (
     <div>
