@@ -4,6 +4,7 @@ import { AuthContext } from "../Firebase/AuthProvider";
 import Swal from "sweetalert2";
 import { FiEye } from "react-icons/fi";
 import { GoEyeClosed } from "react-icons/go";
+import axios from "axios";
 
 const SingIn = () => {
   const [signinError, setSigninError] = useState("");
@@ -48,9 +49,19 @@ const SingIn = () => {
 
     signInUser(email, password)
       .then((result) => {
-       const loggedInUser=(result.user);
-       //jwt kaj start
+        const loggedInUser = result.user;
+        //jwt kaj start
+        const user = { email };
 
+        axios
+          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.success) {
+              navigate(location?.state ? location?.state : "/");
+            }
+          });
 
         // e.target.reset();
         Swal.fire({
@@ -58,7 +69,7 @@ const SingIn = () => {
           text: "User Succesfully SignIn",
           icon: "success",
         });
-        navigate(location?.state ? location.state : "/");
+        // navigate(location?.state ? location.state : "/");
         setSinginSuccesfull("Succesfully SignIn ");
       })
       .catch((error) => {
@@ -77,7 +88,7 @@ const SingIn = () => {
     signInWithGoogle()
       .then((result) => {
         navigate(location?.state ? location.state : "/");
-      //  console.log(result.user);
+        //  console.log(result.user);
       })
       .catch((error) => {
         console.error(error.message);
@@ -88,7 +99,7 @@ const SingIn = () => {
     signInWithGithub()
       .then((result) => {
         navigate(location?.state ? location.state : "/");
-       // console.log(result.user);
+        // console.log(result.user);
       })
       .catch((error) => {
         console.error(error.message);
@@ -97,9 +108,13 @@ const SingIn = () => {
 
   return (
     <div>
-      <div className="hero mt-5 mb-5 md:rounded-2xl flex justify-center flex-col md:flex-row-reverse border " >
+      <div className="hero mt-5 mb-5 md:rounded-2xl flex justify-center flex-col md:flex-row-reverse border ">
         <div>
-          <img className="w-full h-full" src="../../../public/login.jpg" alt="" />
+          <img
+            className="w-full h-full"
+            src="../../../public/login.jpg"
+            alt=""
+          />
         </div>
         <div className="hero-content flex-col">
           <div className="card shrink-0  md:w-[600px] lg:w-[600px] shadow-2xl bg-base-100">
