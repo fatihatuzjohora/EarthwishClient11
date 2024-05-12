@@ -30,7 +30,7 @@ const CreateAssigment = () => {
       mark,
       photo,
     };
-    console.log(newAdd);
+  //  console.log(newAdd);
 
     fetch("http://localhost:5000/assigment", {
       method: "POST",

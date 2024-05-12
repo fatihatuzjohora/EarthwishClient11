@@ -19,7 +19,7 @@ const Assigment = () => {
         return response.json();
       })
       .then((data) => {
-      //  console.log(data);
+        //  console.log(data);
         setdata(data);
       })
       .catch((error) => {
@@ -85,47 +85,69 @@ const Assigment = () => {
         {data?.map((item) => {
           return (
             <div key={item?._id}>
-              <div className=" card bg-base-100 shadow-xl p-6 border ">
+              {/* <div className=" card bg-base-100 shadow-xl p-6 border ">
                 <div className="">
                   <div className="">
                     <figure>
                       <img
                         data-aos="zoom-in-down"
                         data-aos-duration="1700"
-                        className="rounded-xl w-full"
+                        className=" w-full h-[300px]"
                         src={item?.photo}
                         alt="image"
                       />
                     </figure>
                   </div>
                   <div className="">
-                    <h2 className="mt-3 text-3xl font-bold">
+                    <h2 className="mt-3 text-2xl font-bold">
                       {" "}
                       {item?.titleName}
                     </h2>
-                    <p className="mt-3 text-xl text-slate-600 font-semibold">
+                    <p className="mt-3  text-slate-600 font-semibold">
                       {item?.mark}
                     </p>
-                    <h1 className="text-2xl mt-3 font-semibold">
-                      {item?.level}
-                    </h1>
+                    <h1 className=" mt-3 font-semibold">{item?.level}</h1>
+                  </div>
+                </div>
+              </div> */}
 
-                    <div className="flex gap-5 mt-3">
-                      <Link to={`/ditels/${item?._id}`}>
-                        <button className="btn bg-blue-400">View</button>
-                      </Link>
+              <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-light text-gray-800 ">
+                    Deadline: 20/12/2024
+                  </span>
+                  <span className="px-3 py-1 text-blue-800 uppercase bg-blue-200 rounded-full ">
+                    {item?.level}
+                  </span>
+                </div>
 
-                      <Link to={`/update/${item?._id}`}>
-                        <button className="btn bg-green-400">Updata</button>
-                      </Link>
+                <div>
+                  <h1 className="mt-2 text-lg font-semibold text-gray-800 ">
+                    {item?.titleName}
+                  </h1>
 
-                      <button
-                        onClick={() => handeldelete(item?._id)}
-                        className="btn bg-red-400"
-                      >
-                        Delete
-                      </button>
-                    </div>
+                  <div className=" mt-3 mb-10 h-[200px]">
+                  <img className="rounded-md" src={item?.photo} alt="" />
+                </div>
+
+                  <p className="mt-2 text-sm text-gray-600 ">
+                    Lorem ipsum dolor sit adipisicing elit...
+                  </p>
+                  <div className="flex gap-5 mt-3">
+                    <Link to={`/ditels/${item?._id}`}>
+                      <button className="btn bg-blue-400">View</button>
+                    </Link>
+
+                    <Link to={`/update/${item?._id}`}>
+                      <button className="btn bg-green-400">Updata</button>
+                    </Link>
+
+                    <button
+                      onClick={() => handeldelete(item?._id)}
+                      className="btn bg-red-400"
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               </div>
