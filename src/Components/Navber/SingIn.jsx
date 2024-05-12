@@ -49,7 +49,9 @@ const SingIn = () => {
     signInUser(email, password)
       .then((result) => {
        const loggedInUser=(result.user);
-       
+       //jwt kaj start
+
+
         // e.target.reset();
         Swal.fire({
           title: "signIn Successfull",
