@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -5,23 +6,29 @@ import Swal from "sweetalert2";
 const Assigment = () => {
   const [filterData, setFilterData] = useState("");
   const [data, setdata] = useState([]);
+
+  const url=`http://localhost:5000/assigment?level=${filterData}`;
   useEffect(() => {
-    fetch(`http://localhost:5000/assigment?level=${filterData}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    axios.get(url, {withCredentials:true})
+    .then(res=>{
+        setdata(res.data)
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        //  console.log(data);
-        setdata(data);
-      })
+    // fetch(`http://localhost:5000/assigment?level=${filterData}`, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     //  console.log(data);
+    //     setdata(data);
+    //   })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
