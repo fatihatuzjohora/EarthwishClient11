@@ -48,7 +48,8 @@ const SingIn = () => {
 
     signInUser(email, password)
       .then((result) => {
-       // console.log(result.user);
+       const loggedInUser=(result.user);
+       
         // e.target.reset();
         Swal.fire({
           title: "signIn Successfull",
