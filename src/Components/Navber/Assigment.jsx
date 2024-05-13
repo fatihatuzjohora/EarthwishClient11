@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const Assigment = () => {
+    const{user}=useContext(AuthContext)
   const [filterData, setFilterData] = useState("");
   const [data, setdata] = useState([]);
 
+ // const url=`http://localhost:5000/assigment?email=${user?.email`;
   const url=`http://localhost:5000/assigment?level=${filterData}`;
   useEffect(() => {
     axios.get(url, {withCredentials:true})
@@ -92,37 +95,15 @@ const Assigment = () => {
         {data?.map((item) => {
           return (
             <div key={item?._id}>
-              {/* <div className=" card bg-base-100 shadow-xl p-6 border ">
-                <div className="">
-                  <div className="">
-                    <figure>
-                      <img
-                        data-aos="zoom-in-down"
-                        data-aos-duration="1700"
-                        className=" w-full h-[300px]"
-                        src={item?.photo}
-                        alt="image"
-                      />
-                    </figure>
-                  </div>
-                  <div className="">
-                    <h2 className="mt-3 text-2xl font-bold">
-                      {" "}
-                      {item?.titleName}
-                    </h2>
-                    <p className="mt-3  text-slate-600 font-semibold">
-                      {item?.mark}
-                    </p>
-                    <h1 className=" mt-3 font-semibold">{item?.level}</h1>
-                  </div>
-                </div>
-              </div> */}
-
               <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-light text-gray-800 ">
-                    Deadline: 20/12/2024
+                    Deadline: {item?.processingTime}
                   </span>
+                  <span className="text-xs font-light text-gray-800 ">
+                  Total Mark: {item?.mark}
+                  </span>
+                
                   <span className="px-3 py-1 text-blue-800 uppercase bg-blue-200 rounded-full ">
                     {item?.level}
                   </span>
@@ -138,7 +119,7 @@ const Assigment = () => {
                 </div>
 
                   <p className="mt-2 text-sm text-gray-600 ">
-                    Lorem ipsum dolor sit adipisicing elit...
+                    {item?.description.slice(0, 90)}
                   </p>
                   <div className="flex gap-5 mt-3">
                     <Link to={`/ditels/${item?._id}`}>

@@ -14,6 +14,7 @@ import Pending from "../Navber/Pending";
 import Vew from "../SharePage/Vew";
 import Updade from "../SharePage/Updade";
 import TakeAssigment from "../SharePage/TakeAssigment";
+import GiveMark from "../SharePage/GiveMark";
 
 const router = createBrowserRouter([
   {
@@ -76,7 +77,12 @@ const router = createBrowserRouter([
       {
         path: "/takeassigment/:_id",
         element: <PrivateRoute> <TakeAssigment></TakeAssigment> </PrivateRoute>,
-      //  loader: () => fetch("http://localhost:5000/assigment"),
+      loader: ({params}) => fetch(`http://localhost:5000/assigment/${params._id}`),
+      },
+      {
+        path:'/givemark/:id',
+        element:<GiveMark></GiveMark>,
+        loader:({params})=>fetch(`http://localhost:5000/bids/${params.id}`),
       },
       {
         path: "/about",

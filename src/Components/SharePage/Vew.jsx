@@ -22,6 +22,9 @@ const Vew = () => {
                 <span className="text-sm font-light text-gray-800 ">
                   Deadline: 12/08/2024
                 </span>
+                <span className="text-sm font-light text-gray-800 ">
+                Total Mark: {singleData?.mark}
+                </span>
                 <span className="px-4 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full ">
                   {singleData?.level}
                 </span>
@@ -31,8 +34,8 @@ const Vew = () => {
                 <h1 className="mt-2 text-3xl font-semibold text-gray-800 ">
                   {singleData.titleName}
                 </h1>
-                <div className="ml-10 mt-3 mb-10 h-[200px]">
-                  <img className="rounded-md" src={singleData?.photo} alt="" />
+                <div className=" mt-3 mb-10">
+                  <img className="rounded-md h-[300px]" src={singleData?.photo} alt="" />
                 </div>
 
                 <p className="mt-2 text-lg text-gray-600 ">

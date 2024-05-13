@@ -143,7 +143,7 @@ const CreateAssigment = () => {
             </div>
 
             {/* 5*/}
-            <div className="flex gap-5 mb-5">
+            <div className=" gap-5 mb-5">
               <div className="form-control w-full ">
                 <select name="level" className="select select-success w-full">
                   <option disabled hidden selected>
@@ -155,16 +155,21 @@ const CreateAssigment = () => {
                 </select>
               </div>
 
-              <div className="form-control w-full ">
-                <select name="mark" className="select select-success w-full ">
-                  <option disabled hidden selected>
-                    Marks
-                  </option>
-                  <option>A+</option>
-                  <option>A</option>
-                  <option>B</option>
-                </select>
+              <div className="flex   mb-5">
+              <div className="form-control w-full mr-5">
+                <label className="label">
+                  <span className="label-text">Total Mark</span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="mark"
+                    name="mark" 
+                    placeholder="Assigment Total Mark"
+                    className="input input-bordered w-full "
+                  />
+                </label>
               </div>
+            </div>
             </div>
 
             {/* 6*/}
