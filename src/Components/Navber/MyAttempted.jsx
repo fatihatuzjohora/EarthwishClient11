@@ -4,7 +4,26 @@ import { AuthContext } from "../Firebase/AuthProvider";
 const MyAttempted = () => {
 
   const { user } = useContext(AuthContext);
-  const [bids, setBids] = useState([]);
+  // const [bids, setBids] = useState([]);
+  // const [filterData, setFilterData] = useState([]);
+
+  // const targatedData = (data) => {
+  //   const myData = data?.filter((e) => e.email === user.email);
+  //   setFilterData(myData);
+  // };
+
+
+  // useEffect(() => {
+  //   fetch("")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setbids(data);
+  //       targatedData(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
 
   return (
     

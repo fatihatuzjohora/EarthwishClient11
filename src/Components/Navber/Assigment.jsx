@@ -1,37 +1,54 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Firebase/AuthProvider";
 
 const Assigment = () => {
-    const{user}=useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const [filterData, setFilterData] = useState("");
   const [data, setdata] = useState([]);
 
- // const url=`http://localhost:5000/assigment?email=${user?.email`;
-  const url=`http://localhost:5000/assigment?level=${filterData}`;
+  //-------------------------pagenition start
+  const [currentpage, setCsourrentpage] = useState(0);
+  const { count } = useLoaderData();
+  const [itemsPage, setItemPage] = useState(5);
+  //console.log(count);
+  const numberOfPages = Math.ceil(count / itemsPage);
+
+  const pages = [...Array(numberOfPages).keys()];
+
+  const handelPageChange = (e) => {
+    // console.log(e.target.value);
+    const val = parseInt(e.target.value);
+    //console.log(val);
+    setItemPage(val);
+    setCsourrentpage(0);
+  };
+
+  const handelPre = () => {
+    if (currentpage > 0) {
+      setCsourrentpage(currentpage - 1);
+    }
+  };
+
+  const handelNext = () => {
+    if (currentpage < pages.length - 1) {
+      setCsourrentpage(currentpage + 1);
+    }
+  };
+
+  //---------------------pagination end
+
+  // const url=`http://localhost:5000/assigment?email=${user?.email`;
+  // const url=`http://localhost:5000/assigment?product?page=${currentpage}&size=${itemsPage}`;
+  const url = `http://localhost:5000/assigment?level=${filterData}`;
   useEffect(() => {
-    axios.get(url, {withCredentials:true})
-    .then(res=>{
-        setdata(res.data)
-    })
-    // fetch(`http://localhost:5000/assigment?level=${filterData}`, {
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     //  console.log(data);
-    //     setdata(data);
-    //   })
+    axios
+      .get(url, { withCredentials: true })
+      .then((res) => {
+        setdata(res.data);
+      })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
@@ -101,9 +118,9 @@ const Assigment = () => {
                     Deadline: {item?.processingTime}
                   </span>
                   <span className="text-xs font-light text-gray-800 ">
-                  Total Mark: {item?.mark}
+                    Total Mark: {item?.mark}
                   </span>
-                
+
                   <span className="px-3 py-1 text-blue-800 uppercase bg-blue-200 rounded-full ">
                     {item?.level}
                   </span>
@@ -115,8 +132,8 @@ const Assigment = () => {
                   </h1>
 
                   <div className=" mt-3 mb-10 h-[200px]">
-                  <img className="rounded-md" src={item?.photo} alt="" />
-                </div>
+                    <img className="rounded-md" src={item?.photo} alt="" />
+                  </div>
 
                   <p className="mt-2 text-sm text-gray-600 ">
                     {item?.description.slice(0, 90)}
@@ -142,6 +159,27 @@ const Assigment = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="mt-10 mb-10 text-center pagenation font-semibold">
+        <p className=" mb-2 font-semibold">Current Page:{currentpage}</p>
+        <button onClick={handelPre}>Prev</button>
+
+        {pages.map((pages) => (
+          <button
+            onClick={() => setCsourrentpage(pages)}
+            className={currentpage === pages && "selected"}
+          >
+            {pages}
+          </button>
+        ))}
+        <button onClick={handelNext}>Next</button>
+        <select value={itemsPage} onChange={handelPageChange} name="" id="">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
       </div>
     </div>
   );

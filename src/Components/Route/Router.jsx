@@ -62,6 +62,7 @@ const router = createBrowserRouter([
       {
         path: "/assigment",
         element: <Assigment></Assigment>,
+        loader:()=>fetch('http://localhost:5000/assigmentCount')
       },
       {
         path: "/ditels/:_id",
