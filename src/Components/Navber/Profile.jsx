@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
-import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -12,9 +11,6 @@ const Profile = () => {
   return (
     <div>
       <div>
-        <Helmet>
-          <title>Profile</title>
-        </Helmet>
         <section className="p-6 mt-5 mb-5">
           <div className="">
             <p className="text-4xl font-bold text-center">

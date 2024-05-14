@@ -8,7 +8,7 @@ const Assigment = () => {
   const { user } = useContext(AuthContext);
   const [filterData, setFilterData] = useState("");
   const [data, setdata] = useState([]);
-
+//console.log(data);
   //-------------------------pagenition start
   const [currentpage, setCsourrentpage] = useState(0);
   const { count } = useLoaderData();
@@ -40,9 +40,10 @@ const Assigment = () => {
 
   //---------------------pagination end
 
-  // const url=`http://localhost:5000/assigment?email=${user?.email`;
+ 
   // const url=`http://localhost:5000/assigment?product?page=${currentpage}&size=${itemsPage}`;
-  const url = `http://localhost:5000/assigment?level=${filterData}`;
+console.log(filterData);
+  const url = `https://wish-kappa.vercel.app/assigment?level=${filterData}&email=${user?.email}`;
   useEffect(() => {
     axios
       .get(url, { withCredentials: true })
@@ -67,9 +68,9 @@ const Assigment = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      console.log(result);
+  //    console.log(result);
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/assigment/${id}`, {
+        fetch(`https://wish-kappa.vercel.app/assigment/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

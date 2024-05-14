@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
-import logo from '../../../public/group-study-4029949-3345550.webp'
+import logo from "../../../public/group-study-4029949-3345550.webp";
 
 const Navber = () => {
   //--------------------
@@ -56,12 +56,12 @@ const Navber = () => {
           </NavLink>
         </>
       )}
-      {/* <NavLink className="mr-5" to="/contact">
+      <NavLink className="mr-5" to="/contact">
         ContactUs
       </NavLink>
       <NavLink className="mr-5" to="/about">
         AboutUs
-      </NavLink> */}
+      </NavLink>
       <NavLink className="mr-5" to="/signin">
         login
       </NavLink>
@@ -96,11 +96,7 @@ const Navber = () => {
       </div>
       <div className="flex-1">
         <div className="flex gap-2 items-center">
-          <img
-            className="w-[70px] h-[50px]"
-            src={logo}
-            alt=""
-          />
+          <img className="w-[70px] h-[50px]" src={logo} alt="" />
           <span className=" hidden lg:flex text-2xl font-bold">
             Earthwise Explorers
           </span>

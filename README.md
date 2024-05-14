@@ -3,7 +3,7 @@
 - assignment_category_0001
 
 
-- live link: 
+- live link: https://earthwish-c17dd.web.app/assigment
 
 
 - git link server: https://github.com/Porgramming-Hero-web-course/b9a11-server-side-fatihatuzjohora

@@ -1,3 +1,5 @@
+import logo from "../../public/group-study-4029949-3345550.webp";
+
 const Footer = () => {
   return (
     <div className="bg-base-200 ">
@@ -25,18 +27,12 @@ const Footer = () => {
       </footer>
       <footer className="footer px-10 py-4 border-t  text-base-content border-base-300 mx-auto max-w-7xl">
         <aside className="items-center grid-flow-col">
-          <img
-            className="w-[100px]"
-            src="../../public/group-study-4029949-3345550.webp"
-            alt=""
-            
-          />
+          <img className="w-[100px]" src={logo} alt="" />
           <span>Eaetwish Explores</span>
           <br />
           <span>©2024 All rights reserved</span>
-        
         </aside>
-       
+
         <nav className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">
             <a>

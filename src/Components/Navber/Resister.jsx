@@ -1,9 +1,7 @@
-
-
- import Swal from "sweetalert2";
- import { updateProfile } from "firebase/auth";
- import { GoEyeClosed } from "react-icons/go";
- import { FiEye } from "react-icons/fi";
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
+import { GoEyeClosed } from "react-icons/go";
+import { FiEye } from "react-icons/fi";
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
@@ -145,7 +143,7 @@ const Resister = () => {
     signInWithGithub()
       .then((result) => {
         navigate(location?.state ? location.state : "/");
-       // console.log(result.user);
+        // console.log(result.user);
       })
       .catch((error) => {
         console.error(error.message);
@@ -156,7 +154,11 @@ const Resister = () => {
     <div>
       <div className="hero flex justify-center flex-col md:flex-row gap-5 items-center md:p-6">
         <div className="">
-          <img className="w-full h-full" src="../../../public/login.jpg" alt="" />
+          <img
+            className="w-full h-full"
+            src="../../../public/login.jpg"
+            alt=""
+          />
         </div>
         <div className="hero-content flex-col">
           <div className="card shrink-0  md:w-[600px] lg:w-[600px]  shadow-2xl bg-base-100">

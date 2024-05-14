@@ -1,21 +1,20 @@
 import auth from "./Firebase.config";
 import { createContext, useEffect, useState } from "react";
 
- export const AuthContext = createContext(null);
- import PropTypes from "prop-types";
- 
- import {
-   GithubAuthProvider,
-   GoogleAuthProvider,
-   createUserWithEmailAndPassword,
-   onAuthStateChanged,
-   signInWithEmailAndPassword,
-   signInWithPopup,
-   signOut,
-   updateProfile,
-  } from "firebase/auth";
-  
+export const AuthContext = createContext(null);
+import PropTypes from "prop-types";
 
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import axios from "axios";
 
 //--------------------------------------
 
@@ -66,29 +65,32 @@ const AuthProvider = ({ children }) => {
   //---------------------------
 
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, currentUser => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
 
-      // const userEmail=currentuser?.email || user?.email;
-      // const loggedUser={email:userEmail}
-      
-    //  console.log("currenct users", currentUser);
+      //  console.log("currenct users", currentUser);
       setUser(currentUser);
       setLoading(false);
 
-  //      //token
-  //   if(currentUser){
-  //     axios.post('http://localhost:5000/jwt',loggedUser,{
-  //         withCredentials:true })
-  //         .then(res=>{
-  //             console.log('token responce',res.data);
-  //         })
-  // }
-  // else{
-  //     axios.post('http://localhost:5000/logout',loggedUser,{ withCredentials:true})
-  //     .then(res=>{
-  //         console.log(res.data);
-  //     })
-  // }
+      //      //token
+      if (currentUser) {
+        axios
+          .post("https://wish-kappa.vercel.app/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("token responce", res.data);
+          });
+      } else {
+        axios
+          .post("https://wish-kappa.vercel.app/logout", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
+      }
     });
     return () => {
       unSubscribe();

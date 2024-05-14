@@ -30,9 +30,9 @@ const CreateAssigment = () => {
       mark,
       photo,
     };
-  //  console.log(newAdd);
+    //  console.log(newAdd);
 
-    fetch("http://localhost:5000/assigment", {
+    fetch("https://wish-kappa.vercel.app/assigment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -156,20 +156,20 @@ const CreateAssigment = () => {
               </div>
 
               <div className="flex   mb-5">
-              <div className="form-control w-full mr-5">
-                <label className="label">
-                  <span className="label-text">Total Mark</span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="mark"
-                    name="mark" 
-                    placeholder="Assigment Total Mark"
-                    className="input input-bordered w-full "
-                  />
-                </label>
+                <div className="form-control w-full mr-5">
+                  <label className="label">
+                    <span className="label-text">Total Mark</span>
+                  </label>
+                  <label className="input-group">
+                    <input
+                      type="mark"
+                      name="mark"
+                      placeholder="Assigment Total Mark"
+                      className="input input-bordered w-full "
+                    />
+                  </label>
+                </div>
               </div>
-            </div>
             </div>
 
             {/* 6*/}

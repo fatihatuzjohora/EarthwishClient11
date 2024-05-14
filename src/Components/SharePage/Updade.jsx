@@ -38,7 +38,7 @@ const Updade = () => {
     };
     //   console.log(update);
 
-    fetch(`http://localhost:5000/assigment/${_id}`, {
+    fetch(`https://wish-kappa.vercel.app/assigment/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const Updade = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-       // console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "success!",

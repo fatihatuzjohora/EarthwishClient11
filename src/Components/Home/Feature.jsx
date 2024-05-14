@@ -5,7 +5,7 @@ const Feature = () => {
   const [data, setdata] = useState([]);
   const [limit, setLimit] = useState(6);
   useEffect(() => {
-    fetch(`http://localhost:5000/assigment`, {
+    fetch(`https://wish-kappa.vercel.app/assigment`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,9 @@ const Feature = () => {
   }, []);
   return (
     <div className="mt-5 mb-5">
-      <h1 className="text-3xl text-center font-bold mb-5 ">Some Cards</h1>
+      <h1 className="text-3xl text-center font-bold mb-5 ">
+        Special Catagories Section
+      </h1>
       <div>
         <div className=" mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
           {data?.slice(0, limit).map((item) => {
@@ -36,11 +38,11 @@ const Feature = () => {
                 <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-light text-gray-800 ">
-                    Deadline: {item?.processingTime}
+                      Deadline: {item?.processingTime}
                     </span>
                     <span className="text-xs font-light text-gray-800 ">
-                  Total Mark: {item?.mark}
-                  </span>
+                      Total Mark: {item?.mark}
+                    </span>
                     <span className="px-3 py-1 text-blue-800 uppercase bg-blue-200 rounded-full ">
                       {item?.level}
                     </span>

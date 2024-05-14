@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-
 const TakeAssigment = () => {
   const item = useLoaderData();
   //console.log(item);
@@ -13,10 +12,10 @@ const TakeAssigment = () => {
   const { titleName, email, mark, name } = item;
   //console.log(mark);
   const handelTakeAssigment = (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const pdf = form.pdf.value;
-      const comment = form.pdf.value;
+    event.preventDefault();
+    const form = event.target;
+    const pdf = form.pdf.value;
+    const comment = form.pdf.value;
     const title = titleName;
     const examineeEmail = email;
     const examineeName = name;
@@ -24,20 +23,19 @@ const TakeAssigment = () => {
     const givenMark = null;
     const feedBack = null;
     const infoCollection = {
-        pdf,
-        comment,
-        title,
-        examineeEmail,
-        examineeName,
-        status,
-        givenMark,
-        feedBack,
-        mark
+      pdf,
+      comment,
+      title,
+      examineeEmail,
+      examineeName,
+      status,
+      givenMark,
+      feedBack,
+      mark,
     };
-    
-    
+
     axios
-      .post("http://localhost:5000/bids", infoCollection)
+      .post("https://wish-kappa.vercel.app/bids", infoCollection)
       .then((res) => {
         if (res.data) {
           return Swal.fire({
@@ -69,20 +67,6 @@ const TakeAssigment = () => {
 
           <form onSubmit={handelTakeAssigment}>
             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
-              {/* <div>
-                <label className="text-gray-700 " htmlFor="emailAddress">
-                  Email Address
-                </label>
-                <input
-                  id="emailAddress"
-                  type="email"
-                  name="email"
-                  defaultValue={user?.email}
-                  disabled
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
-                />
-              </div> */}
-
               <div>
                 <label className="text-gray-700 " htmlFor="">
                   PDF/doc link
@@ -111,8 +95,11 @@ const TakeAssigment = () => {
             </div>
 
             <div className="flex justify-end mt-6">
-                <input className="btn"  type="submit" value="Submitted Assignment" />
-
+              <input
+                className="btn"
+                type="submit"
+                value="Submitted Assignment"
+              />
             </div>
           </form>
         </section>

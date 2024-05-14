@@ -1,14 +1,14 @@
-import img1 from "../../../public/6.jpeg"
-import img2 from "../../../public/5.jpeg"
-import img3 from "../../../public/4.jpeg"
-import img4 from "../../../public/3.jpeg"
-import img5 from "../../../public/2.jpeg"
-import img6 from "../../../public/1.jpeg"
+import img1 from "../../../public/6.jpeg";
+import img2 from "../../../public/5.jpeg";
+import img3 from "../../../public/4.jpeg";
+import img4 from "../../../public/3.jpeg";
+import img5 from "../../../public/2.jpeg";
+import img6 from "../../../public/1.jpeg";
 
 const Banner = () => {
-    return (
-        <div>
-             <div className="carousel w-full h-[500px]">
+  return (
+    <div>
+      <div className="carousel w-full h-[500px]">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={img1} className="w-full" />
           <div className="absolute flex justify-end gap-5 transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -22,7 +22,7 @@ const Banner = () => {
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
               <p className="text-xl md:text-6xl font-bold ">
-               Group study part of life & importent 
+                Group study part of life & importent
               </p>
               <p className="">
                 There are many variations of passages of available, but the
@@ -78,7 +78,7 @@ const Banner = () => {
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
               <p className="text-xl md:text-6xl font-bold ">
-              Group study part of life & importent 
+                Group study part of life & importent
               </p>
               <p className="">
                 There are many variations of passages of available, but the
@@ -106,7 +106,7 @@ const Banner = () => {
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
               <p className="text-xl md:text-6xl font-bold ">
-              Always consuntration your study
+                Always consuntration your study
               </p>
               <p className="">
                 There are many variations of passages of available, but the
@@ -134,7 +134,7 @@ const Banner = () => {
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
               <p className="text-xl md:text-6xl font-bold ">
-              Group study part of life & importent 
+                Group study part of life & importent
               </p>
               <p className="">
                 There are many variations of passages of available, but the
@@ -162,7 +162,7 @@ const Banner = () => {
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
               <p className="text-xl md:text-6xl font-bold ">
-              Always consuntration your study
+                Always consuntration your study
               </p>
               <p className="">
                 There are many variations of passages of available, but the
@@ -178,8 +178,8 @@ const Banner = () => {
           </div>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Banner;
