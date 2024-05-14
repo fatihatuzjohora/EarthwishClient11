@@ -15,6 +15,7 @@
 
 
 ## Installation
+
 - npm install firebase
 - npm install daisyui.com
 - npm install tailwindcss.com
