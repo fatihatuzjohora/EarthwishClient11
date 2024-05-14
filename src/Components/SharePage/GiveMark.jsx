@@ -8,7 +8,7 @@ const GiveMark = () => {
 
   const handelMarkSubmited = (event) => {
     event.preventDefault();
-    console.log("click");
+   // console.log("click");
     const form = event.target;
     const givenMark = form.givemark.value;
     const feedBack = form.feedback.value;

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
+import logo from '../../../public/group-study-4029949-3345550.webp'
 
 const Navber = () => {
   //--------------------
@@ -97,7 +98,7 @@ const Navber = () => {
         <div className="flex gap-2 items-center">
           <img
             className="w-[70px] h-[50px]"
-            src="/public/group-study-4029949-3345550.webp"
+            src={logo}
             alt=""
           />
           <span className=" hidden lg:flex text-2xl font-bold">
