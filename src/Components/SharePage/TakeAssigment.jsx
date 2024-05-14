@@ -61,7 +61,7 @@ const TakeAssigment = () => {
   return (
     <div>
       <div className="md:ml-32">
-        <section className="p-6 w-[600px]  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]">
+        <section className="p-6 md:w-[600px]  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]">
           <h1 className="text-center mt-5 mb-5 font-bold text-2xl bg-base-300">
             Assigment Submit
           </h1>

@@ -27,7 +27,7 @@ const Feature = () => {
   }, []);
   return (
     <div className="mt-5 mb-5">
-      <h1 className="text-3xl text-center font-bold mb-5 ">All Feature</h1>
+      <h1 className="text-3xl text-center font-bold mb-5 ">Some Cards</h1>
       <div>
         <div className=" mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
           {data?.slice(0, limit).map((item) => {

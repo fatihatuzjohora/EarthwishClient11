@@ -66,10 +66,29 @@ const AuthProvider = ({ children }) => {
   //---------------------------
 
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribe = onAuthStateChanged(auth, currentUser => {
+
+      // const userEmail=currentuser?.email || user?.email;
+      // const loggedUser={email:userEmail}
+      
     //  console.log("currenct users", currentUser);
       setUser(currentUser);
       setLoading(false);
+
+  //      //token
+  //   if(currentUser){
+  //     axios.post('http://localhost:5000/jwt',loggedUser,{
+  //         withCredentials:true })
+  //         .then(res=>{
+  //             console.log('token responce',res.data);
+  //         })
+  // }
+  // else{
+  //     axios.post('http://localhost:5000/logout',loggedUser,{ withCredentials:true})
+  //     .then(res=>{
+  //         console.log(res.data);
+  //     })
+  // }
     });
     return () => {
       unSubscribe();

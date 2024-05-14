@@ -21,7 +21,7 @@ const Banner = () => {
           </div>
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
-              <p className="text-6xl font-bold ">
+              <p className="text-xl md:text-6xl font-bold ">
                Group study part of life & importent 
               </p>
               <p className="">
@@ -29,7 +29,7 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div className="">
-                <button className="btn bg-orange-400 mr-5">
+                <button className="btn bg-orange-400 mr-5 mb-2">
                   Discover More
                 </button>
                 <button className="btn">Latest Project</button>
@@ -49,7 +49,7 @@ const Banner = () => {
           </div>
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
-              <p className="text-6xl font-bold ">
+              <p className="text-xl md:text-6xl font-bold ">
                 Always consuntration your study
               </p>
               <p className="">
@@ -57,7 +57,7 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div className="">
-                <button className="btn bg-orange-400 mr-5">
+                <button className="btn bg-orange-400 mr-5 mb-2">
                   Discover More
                 </button>
                 <button className="btn">Latest Project</button>
@@ -77,7 +77,7 @@ const Banner = () => {
           </div>
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
-              <p className="text-6xl font-bold ">
+              <p className="text-xl md:text-6xl font-bold ">
               Group study part of life & importent 
               </p>
               <p className="">
@@ -85,7 +85,7 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div className="">
-                <button className="btn bg-orange-400 mr-5">
+                <button className="btn bg-orange-400 mr-5 mb-2">
                   Discover More
                 </button>
                 <button className="btn">Latest Project</button>
@@ -105,7 +105,7 @@ const Banner = () => {
           </div>
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
-              <p className="text-6xl font-bold ">
+              <p className="text-xl md:text-6xl font-bold ">
               Always consuntration your study
               </p>
               <p className="">
@@ -113,7 +113,7 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div className="">
-                <button className="btn bg-orange-400 mr-5">
+                <button className="btn bg-orange-400 mr-5 mb-2">
                   Discover More
                 </button>
                 <button className="btn">Latest Project</button>
@@ -133,7 +133,7 @@ const Banner = () => {
           </div>
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
-              <p className="text-6xl font-bold ">
+              <p className="text-xl md:text-6xl font-bold ">
               Group study part of life & importent 
               </p>
               <p className="">
@@ -141,7 +141,7 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div className="">
-                <button className="btn bg-orange-400 mr-5">
+                <button className="btn bg-orange-400 mr-5 mb-2">
                   Discover More
                 </button>
                 <button className="btn">Latest Project</button>
@@ -161,7 +161,7 @@ const Banner = () => {
           </div>
           <div className="absolute h-full items-center flex bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white  space-y-7 pl-12 w-1/2">
-              <p className="text-6xl font-bold ">
+              <p className="text-xl md:text-6xl font-bold ">
               Always consuntration your study
               </p>
               <p className="">
@@ -169,7 +169,7 @@ const Banner = () => {
                 majority have suffered alteration in some form
               </p>
               <div className="">
-                <button className="btn bg-orange-400 mr-5">
+                <button className="btn bg-orange-400 mr-5 mb-2">
                   Discover More
                 </button>
                 <button className="btn">Latest Project</button>
