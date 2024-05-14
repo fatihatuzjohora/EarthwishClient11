@@ -52,4 +52,4 @@
 
 - Analytics and Reporting: AssignmentHub provides analytics and reporting features, allowing teachers to track student progress, identify areas of improvement, and generate custom reports.
 
-## Mobile Compatibility: The platform is optimized for mobile devices, enabling students and teachers to access assignments and related resources anytime, anywhere.
+- Mobile Compatibility: The platform is optimized for mobile devices, enabling students and teachers to access assignments and related resources anytime, anywhere.
