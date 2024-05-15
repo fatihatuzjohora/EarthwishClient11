@@ -103,12 +103,7 @@ const Pending = () => {
                           <Link
                             to={`/givemark/${item._id}`}
                             title="Mark Complete"
-                            className={`${
-                              "fatihatuzjohora143@gmail.com" ===
-                              "fatihatuzjohora143@gmail.com"
-                                ? "hidden"
-                                : ""
-                            } text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none disabled:cursor-not-allowed`}
+                            className={` text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none disabled:cursor-not-allowed`}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"

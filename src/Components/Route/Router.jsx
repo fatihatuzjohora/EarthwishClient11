@@ -15,6 +15,7 @@ import Vew from "../SharePage/Vew";
 import Updade from "../SharePage/Updade";
 import TakeAssigment from "../SharePage/TakeAssigment";
 import GiveMark from "../SharePage/GiveMark";
+import Profile from "../Navber/Profile";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Resister></Resister>,
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
       },
       {
         path: "/createassigment",
@@ -75,7 +80,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <Updade></Updade>,
+        element: <PrivateRoute><Updade></Updade></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`https://wish-kappa.vercel.app/assigment/${params.id}`),
       },

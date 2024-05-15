@@ -166,22 +166,23 @@ const Updade = () => {
                 <option>Hard</option>
               </select>
             </div>
-
-            <div className="form-control w-full ">
-              <select
-                name="mark"
-                defaultValue={mark}
-                className="select select-success w-full "
-              >
-                <option disabled hidden selected>
-                  Marks
-                </option>
-                <option>A+</option>
-                <option>A</option>
-                <option>B</option>
-              </select>
-            </div>
           </div>
+          <div className="flex   mb-5">
+                <div className="form-control w-full mr-5">
+                  <label className="label">
+                    <span className="label-text">Total Mark</span>
+                  </label>
+                  <label className="input-group">
+                    <input
+                      type="mark"
+                      name="mark"
+                      defaultValue={mark}
+                      placeholder="Assigment Total Mark"
+                      className="input input-bordered w-full "
+                    />
+                  </label>
+                </div>
+              </div>
 
           {/* 6*/}
 

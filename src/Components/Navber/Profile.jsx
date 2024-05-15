@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
+
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -14,17 +12,17 @@ const Profile = () => {
         <section className="p-6 mt-5 mb-5">
           <div className="">
             <p className="text-4xl font-bold text-center">
-              Personal Inormation
+              Personal Information
             </p>
           </div>
 
-          <div className="flex justify-center col-span-1 md:grid-cols-2 gap-5 items-center p-6">
+          <div className="grid col-span-1 md:grid-cols-2 gap-5 items-center p-6 max-w-3xl mx-auto">
             <div className="">
               <div className=" ">
                 <img
                   data-aos="zoom-in"
                   data-aos-duration="1700"
-                  className="rounded-full  w-[300px] h-[300px] shadow-lg border  hover:shadow-red-300 "
+                  className="rounded-full  md:w-[300px] md:h-[300px] shadow-lg border  hover:shadow-red-300 "
                   src={user.photoURL}
                   alt="photp"
                 />
