@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { FiEye } from "react-icons/fi";
 import { GoEyeClosed } from "react-icons/go";
 import axios from "axios";
+import logo from '../../../public/login.jpg'
 
 const SingIn = () => {
   const [signinError, setSigninError] = useState("");
@@ -112,7 +113,7 @@ const SingIn = () => {
         <div>
           <img
             className="w-full h-full"
-            src="../../../public/login.jpg"
+            src={logo}
             alt=""
           />
         </div>

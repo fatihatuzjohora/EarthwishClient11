@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import { GoEyeClosed } from "react-icons/go";
 import { FiEye } from "react-icons/fi";
-
+import logo from '../../../public/login.jpg'
 import { useContext, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
@@ -156,7 +156,7 @@ const Resister = () => {
         <div className="">
           <img
             className="w-full h-full"
-            src="../../../public/login.jpg"
+            src={logo}
             alt=""
           />
         </div>

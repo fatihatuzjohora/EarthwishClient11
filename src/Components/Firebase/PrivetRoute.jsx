@@ -12,9 +12,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div>
-        <div className="text-7xl flex justify-center p-10 w-[100vh]">
-          <span className="loading loading-spinner items-center loading-lg"></span>
-        </div>
+<progress className="progress w-56"></progress>
       </div>
     );
   }
