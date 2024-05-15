@@ -30,13 +30,13 @@ const Pending = () => {
         <div className="flex flex-col mt-6">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div className="overflow-hidden border border-gray-200  md:rounded-lg">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
+              <div className="overflow-hidden border   md:rounded-lg">
+                <table className="min-w-full divide-y ">
+                  <thead className="">
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500"
+                        className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right "
                       >
                         <div className="flex items-center gap-x-3">
                           <span>Title</span>
@@ -45,14 +45,14 @@ const Pending = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right"
                       >
                         <span>Examnee Name</span>
                       </th>
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right"
                       >
                         <button className="flex items-center gap-x-2">
                           <span>Main Mark</span>
@@ -61,30 +61,30 @@ const Pending = () => {
 
                       <th
                         scope="col"
-                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
+                        className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right"
                       >
                         Status
                       </th>
 
-                      <th className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                      <th className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right">
                         Give Mark
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200 ">
+                  <tbody className=" ">
                     {data.map((item) => (
                       <tr key={item._id}>
-                        <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                        <td className="px-4 py-4 text-sm  whitespace-nowrap">
                           {item.title}
                         </td>
 
-                        <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                        <td className="px-4 py-4 text-sm  whitespace-nowrap">
                           {item.examineeName}
                         </td>
                         <td className="px-4 py-4 text-sm whitespace-nowrap">
                           <div className="flex items-center gap-x-2">
                             <p
-                              className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60
+                              className="px-3 py-1 rounded-full bg-base-300
                              text-xs"
                             >
                               {item.mark}
@@ -92,8 +92,8 @@ const Pending = () => {
                           </div>
                         </td>
                         <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                          <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-yellow-100/60 text-yellow-500">
-                            <span className="h-1.5 w-1.5 rounded-full bg-yellow-500"></span>
+                          <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-yellow-100/60 t">
+                            <span className="h-1.5 w-1.5 rounded-full"></span>
                             <h2 className="text-sm font-normal ">
                               {item.status}
                             </h2>
@@ -103,7 +103,7 @@ const Pending = () => {
                           <Link
                             to={`/givemark/${item._id}`}
                             title="Mark Complete"
-                            className={` text-gray-500 transition-colors duration-200   hover:text-red-500 focus:outline-none disabled:cursor-not-allowed`}
+                            className={` transition-colors duration-200   hove focus:outline-none disabled:cursor-not-allowed`}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"

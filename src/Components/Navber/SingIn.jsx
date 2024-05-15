@@ -129,6 +129,7 @@ const SingIn = () => {
                   type="email"
                   name="email"
                   placeholder="email"
+                  required
                   className="input input-bordered"
                 />
                 <p className="text-red-500">{newError}</p>
@@ -142,6 +143,7 @@ const SingIn = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
+                  required
                   className="input input-bordered"
                 />
                 <p className="text-red-500">{newErrorpassword}</p>

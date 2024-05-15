@@ -17,8 +17,10 @@ const TakeAssigment = () => {
     const pdf = form.pdf.value;
     const comment = form.pdf.value;
     const title = titleName;
-    const examineeEmail = email;
-    const examineeName = name;
+    const examineeEmail = user?.email;
+    const examineeName = user?.displayName;
+    const othorName= email;
+    const othorEmail= name;
     const status = "pending";
     const givenMark = null;
     const feedBack = null;
@@ -59,7 +61,7 @@ const TakeAssigment = () => {
   return (
     <div>
       <div className="md:ml-32">
-        <section className="p-6 md:w-[600px]  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]">
+        <section className="p-6 md:w-[600px]  bg-base-300 rounded-md shadow-md flex-1 md:min-h-[350px]">
           <h1 className="text-center mt-5 mb-5 font-bold text-2xl bg-base-300">
             Assigment Submit
           </h1>
@@ -68,20 +70,21 @@ const TakeAssigment = () => {
           <form onSubmit={handelTakeAssigment}>
             <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
-                <label className="text-gray-700 " htmlFor="">
+                <label className=" " htmlFor="">
                   PDF/doc link
                 </label>
                 <input
                   id=""
                   type="text"
                   name="pdf"
+                  required
                   placeholder="PDF/doc link"
                   className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 />
               </div>
 
               <div>
-                <label className="text-gray-700 " htmlFor="comment">
+                <label className=" " htmlFor="comment">
                   Comment
                 </label>
 
@@ -89,7 +92,8 @@ const TakeAssigment = () => {
                   id="comment"
                   name="comment"
                   type="comment"
-                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+                  required
+                  className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 />
               </div>
             </div>

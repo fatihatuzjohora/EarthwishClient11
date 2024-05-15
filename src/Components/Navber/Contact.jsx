@@ -5,7 +5,7 @@ const Contact = () => {
         {/* <Helmet>
           <title>Contact Detils</title>
         </Helmet> */}
-        <section className="py-6 mt-10 mb-5 dark:bg-gray-300 rounded-md dark:text-gray-900">
+        <section className="py-6 mt-10 mb-5 bg-base-300 rounded-md ">
           <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
             <div className="py-6 md:py-0 md:mt-14 md:px-6">
               <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -56,7 +56,7 @@ const Contact = () => {
 
             <form
               noValidate=""
-              className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-gray-50"
+              className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow "
             >
               <h2 className="w-full text-3xl font-bold leading-tight">
                 Contact us

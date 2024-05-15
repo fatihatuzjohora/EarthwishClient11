@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import Swal from "sweetalert2";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const CreateAssigment = () => {
   const { user } = useContext(AuthContext);
   const [data, setdata] = useState([]);
   const email = data?.filter((e) => e.email === user.email);
+  const [startDate, setStartDate] = useState(new Date());
 
   //console.log(user.email);
 
@@ -15,7 +19,7 @@ const CreateAssigment = () => {
     const email = form.email.value;
     const name = form.name.value;
     const titleName = form.titleName.value;
-    const processingTime = form.processingTime.value;
+    const processingTime =startDate ;
     const description = form.description.value;
     const level = form.level.value;
     const mark = form.mark.value;
@@ -106,6 +110,7 @@ const CreateAssigment = () => {
                     type="text"
                     name="titleName"
                     placeholder="Title name"
+                    required
                     className="input input-bordered w-full "
                   />
                 </label>
@@ -116,12 +121,14 @@ const CreateAssigment = () => {
                   <span className="label-text">Processing Time</span>
                 </label>
                 <label className="input-group">
-                  <input
+                  {/* <input
                     type="date"
+                    required
                     name="processingTime"
                     placeholder="processing time"
                     className="input input-bordered w-full "
-                  />
+                  /> */}
+                  <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                 </label>
               </div>
             </div>
@@ -135,6 +142,7 @@ const CreateAssigment = () => {
                   <input
                     type="text"
                     name="description"
+                    required
                     placeholder="Description"
                     className="input input-bordered w-full "
                   />
@@ -162,8 +170,9 @@ const CreateAssigment = () => {
                   </label>
                   <label className="input-group">
                     <input
-                      type="mark"
+                      type="number"
                       name="mark"
+                      required
                       placeholder="Assigment Total Mark"
                       className="input input-bordered w-full "
                     />
@@ -183,6 +192,7 @@ const CreateAssigment = () => {
                   <input
                     type="text"
                     name="photo"
+                    required
                     placeholder="photo"
                     className="input input-bordered w-full "
                   />

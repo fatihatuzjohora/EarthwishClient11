@@ -3,12 +3,14 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Firebase/AuthProvider";
+import loading from '../../../public/Loading_2.gif'
 
 const Assigment = () => {
   const { user } = useContext(AuthContext);
   const [filterData, setFilterData] = useState("");
   const [data, setdata] = useState([]);
-//console.log(data);
+  
+  //console.log(data);
   //-------------------------pagenition start
   const [currentpage, setCsourrentpage] = useState(0);
   const { count } = useLoaderData();
@@ -40,9 +42,8 @@ const Assigment = () => {
 
   //---------------------pagination end
 
- 
   // const url=`http://localhost:5000/assigment?product?page=${currentpage}&size=${itemsPage}`;
-console.log(filterData);
+  //console.log(filterData);
   const url = `https://wish-kappa.vercel.app/assigment?level=${filterData}&email=${user?.email}`;
   useEffect(() => {
     axios
@@ -54,11 +55,26 @@ console.log(filterData);
         console.error("Error fetching data:", error);
       });
   }, [filterData]);
+  if (!data.length) {
+    return <div className="flex justify-center h-screen items-center"><img src={loading} alt="" /></div>
+  }
 
+  //console.log(data);
   //----------------------------------
 
-  const handeldelete = (id) => {
+  const handeldelete = (id, authorEmail) => {
     // console.log("delete", id);
+    if (authorEmail !== user?.email) {
+      return Swal.fire({
+        title: "your have no permition",
+        // text: "You won't be able to revert this!",
+        // icon: "warning",
+        // showCancelButton: true,
+        // confirmButtonColor: "#3085d6",
+        // cancelButtonColor: "#d33",
+        // confirmButtonText: "Yes, delete it!",
+      });
+    }
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -68,7 +84,8 @@ console.log(filterData);
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-  //    console.log(result);
+      //    console.log(result);
+
       if (result.isConfirmed) {
         fetch(`https://wish-kappa.vercel.app/assigment/${id}`, {
           method: "DELETE",
@@ -113,12 +130,12 @@ console.log(filterData);
         {data?.map((item) => {
           return (
             <div key={item?._id}>
-              <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all">
+              <div className="w-full max-w-sm px-4 py-3 bg-base-300 rounded-md shadow-md hover:scale-[1.05] transition-all">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-light text-gray-800 ">
+                  <span className="text-xs font-light  ">
                     Deadline: {item?.processingTime}
                   </span>
-                  <span className="text-xs font-light text-gray-800 ">
+                  <span className="text-xs font-light  ">
                     Total Mark: {item?.mark}
                   </span>
 
@@ -128,7 +145,7 @@ console.log(filterData);
                 </div>
 
                 <div>
-                  <h1 className="mt-2 text-lg font-semibold text-gray-800 ">
+                  <h1 className="mt-2 text-lg font-semibold  ">
                     {item?.titleName}
                   </h1>
 
@@ -136,7 +153,7 @@ console.log(filterData);
                     <img className="rounded-md" src={item?.photo} alt="" />
                   </div>
 
-                  <p className="mt-2 text-sm text-gray-600 ">
+                  <p className="mt-2 text-sm  ">
                     {item?.description.slice(0, 90)}
                   </p>
                   <div className="flex gap-5 mt-3">
@@ -149,7 +166,7 @@ console.log(filterData);
                     </Link>
 
                     <button
-                      onClick={() => handeldelete(item?._id)}
+                      onClick={() => handeldelete(item?._id, item?.email)}
                       className="btn bg-red-400"
                     >
                       Delete

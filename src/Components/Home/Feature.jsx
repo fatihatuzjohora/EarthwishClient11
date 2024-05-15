@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import loading from '../../../public/Loading_2.gif'
 
 const Feature = () => {
   const [data, setdata] = useState([]);
@@ -25,6 +26,9 @@ const Feature = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
+  if (!data.length) {
+    return <div className="flex justify-center h-screen items-center"><img src={loading} alt="" /></div>
+  }
   return (
     <div className="mt-5 mb-5">
       <h1 className="text-3xl text-center font-bold mb-5 ">
@@ -35,12 +39,12 @@ const Feature = () => {
           {data?.slice(0, limit).map((item) => {
             return (
               <div key={item?._id}>
-                <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all">
+                <div className="w-full max-w-sm px-4 py-3 bg-base-300 rounded-md shadow-md hover:scale-[1.05] transition-all">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-light text-gray-800 ">
+                    <span className="text-xs font-light  ">
                       Deadline: {item?.processingTime}
                     </span>
-                    <span className="text-xs font-light text-gray-800 ">
+                    <span className="text-xs font-light  ">
                       Total Mark: {item?.mark}
                     </span>
                     <span className="px-3 py-1 text-blue-800 uppercase bg-blue-200 rounded-full ">
@@ -49,7 +53,7 @@ const Feature = () => {
                   </div>
 
                   <div>
-                    <h1 className="mt-2 text-lg font-semibold text-gray-800 ">
+                    <h1 className="mt-2 text-lg font-semibold  ">
                       {item?.titleName}
                     </h1>
 
@@ -57,7 +61,7 @@ const Feature = () => {
                       <img className="rounded-md" src={item?.photo} alt="" />
                     </div>
 
-                    <p className="mt-2 text-sm text-gray-600 ">
+                    <p className="mt-2 text-sm  ">
                       {item?.description.slice(0, 90)}
                     </p>
                     <div className="flex gap-5 mt-3">

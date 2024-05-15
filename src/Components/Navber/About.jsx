@@ -5,7 +5,7 @@ const About = () => {
         {/* <Helmet>
           <title>About</title>
         </Helmet> */}
-        <section className="py-6 rounded-xl mb-5 dark:bg-gray-100 dark:text-gray-800">
+        <section className="py-6 rounded-xl mb-5 bg-base-300">
           <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
             <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
               Our team
@@ -82,7 +82,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="dark:bg-gray-100 mt-10 mb-10 dark:text-gray-800">
+        <section className="bg-base-300 dark:text-gray-800">
           <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
             <a
               rel="noopener noreferrer"

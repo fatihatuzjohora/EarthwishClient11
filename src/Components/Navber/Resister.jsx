@@ -172,6 +172,7 @@ const Resister = () => {
                   type="Name"
                   placeholder="Name"
                   name="name"
+                  required
                   className="input input-bordered"
                 />
                 <p className="text-red-500">{nameError}</p>
@@ -185,6 +186,7 @@ const Resister = () => {
                   type="email"
                   name="email"
                   placeholder="email"
+                  required
                   className="input input-bordered"
                 />
                 <p className="text-red-500">{emailError}</p>
